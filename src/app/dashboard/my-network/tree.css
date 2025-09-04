@@ -1,0 +1,84 @@
+.tree {
+  white-space: nowrap;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.tree ul {
+  display: flex;
+  justify-content: flex-start;
+  min-width: max-content;
+}
+.tree li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 50px 15px 0 15px;
+  transition: all 0.5s;
+  flex-shrink: 0;
+}
+
+.tree li::before,
+.tree li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border-top: 1px solid #ccc;
+  width: 50%;
+  height: 50px;
+}
+
+.tree li::before {
+  right: 50%;
+  border-right: 1px solid #ccc;
+}
+
+.tree li::after {
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+.tree li:only-child::before,
+.tree li:only-child::after {
+  display: none;
+}
+
+.tree li:only-child {
+  padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: none;
+}
+
+.tree ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  height: 50px;
+}
+
+/* Additional styles to handle many nodes */
+.tree > ul > li {
+  padding: 50px 15px 0 15px;
+}
+
+.node-content {
+  position: relative;
+  z-index: 10;
+  background: #4a5568; /* Match your current bg color */
+}
+
+/* Horizontal scroll for levels with many nodes */
+.tree ul.level-1 {
+  overflow-x: auto;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
