@@ -26,7 +26,7 @@ export interface ApiErrorResponse extends ApiResponse {
 }
 
 const axiosInstance = axios.create({
-  baseURL: "https://admin.capitronix.com/api/user/",
+  baseURL: "https://test.capitronix.com/api/user/",
   timeout: 30000,
   headers: {
     "Content-Type": "application/json",

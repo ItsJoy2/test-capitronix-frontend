@@ -28,7 +28,7 @@ export interface ApiResponse<T = unknown> {
 // }
 
 const axiosInstance = axios.create({
-  baseURL: `http://admin.biznode.io/api/user`,
+  baseURL: `http://test.biznode.io/api/user`,
   timeout: 30000,
   headers: {
     "Content-Type": "application/json",
